@@ -1,0 +1,4 @@
+name: app
+dependencies:
+  - python=3.7
+  - requests

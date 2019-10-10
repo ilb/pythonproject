@@ -1,0 +1,7 @@
+name: library
+dependencies:
+  - python=3.7
+  - requests
+  - pip:
+    - setuptools
+    - wheel
