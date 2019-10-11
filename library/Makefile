@@ -1,7 +1,7 @@
 .PHONY: bootstrap clean lint test
 
 test:
-	source activate library && python -m unittest discover
+	conda activate library && python -m unittest discover
 	# or another way
 
 lint:
