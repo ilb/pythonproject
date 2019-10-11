@@ -3,4 +3,6 @@
 import requests
 
 # some library code
-print(requests.__version__)
+class Library():
+    def call(self):
+        print(requests.__version__)
