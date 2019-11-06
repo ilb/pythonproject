@@ -1,11 +1,10 @@
-.PHONY: bootstrap clean lint test
+.PHONY: run format test clean
 
 test:
-	conda activate library && python -m unittest discover
-	# or another way
+	source activate app && pytest -vv
 
 lint:
-	# add some lint here
+	source activate app && black app/
 
 update:
 	conda env update
@@ -13,6 +12,10 @@ update:
 bootstrap:
 	conda env create -f environment.yml
 
-run dev:
-	cd app; \
-	source activate app && python -m http.server --cgi
+run:
+	cd app ;\
+	ln -s web cgi-bin ;\
+	PYTHONPATH=/opt/anaconda3/envs/app/lib/python3.7/site-packages python -m http.server --cgi
+
+clean:
+	rm -rf app/cgi-bin
