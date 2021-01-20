@@ -1,9 +1,0 @@
-name: app
-dependencies:
-  - python=3.7
-  - black
-  - pytest
-  - requests
-  - pip:
-      - bottle
-      - bottle-swagger-2

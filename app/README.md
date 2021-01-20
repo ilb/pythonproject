@@ -1,39 +1,37 @@
-Sample python CGI-bin app based on Bottle
+Sample python web app based on Bottle
 =========================================
-
-Uses miniconda distribution, makes environment for app, allows run app on python dev server.
 
 Install deps:
 ----------
 ```shell script
-make bootstrap
-```
-
-Update deps:
------------
-```shell script
-make update
+python setup.py .["dev"]
 ```
 
 Test:
 -----
 ```shell script
-make test 
+pytest
 ```
 
-Run:
+Build package:
 ----
 ```shell script
-make run
+python setup.py sdist bdist_wheel
 ```
 
-Format:
-------
-Black used as formatter.
+Install package:
+----
 
 ```shell script
-make format
+pip install dist/*.whl
 ```
 
-You can check it running on `http://localhost:8000/cgi-bin/controller.py/time`
-Swagger docs available on `http://localhost:8000/cgi-bin/controller.py/swagger/`
+Run package:
+----
+
+```shell script
+(PYTHON_EXEC)/bin/webapp
+/usr/bin/python3.8.5/bin/webapp
+```
+
+You can check it running on `http://localhost:8000/webapp/time/`
