@@ -10,6 +10,7 @@ app_dependencies = [
 
 dev_dependencies = [
     "pytest",
+    "pylint",
     "wheel"
 ]
 
@@ -19,13 +20,19 @@ setup(
     description="This is web app based on bottle.",
     author="Name",
     author_email="name@name.com",
+    url="https://git.ilb.ru/ilb.ru/webapp",
     packages=find_packages(),
     python_requires=">=3.6",
+    package_data={
+        "": ["*.json", "*.yaml", "*.xml", "*.wav", "*.sh", "*.jpg"]
+    },
     install_requires=app_dependencies,
-    extras_require={"dev": dev_dependencies, },
+    extras_require={
+        "dev": dev_dependencies,
+    },
     entry_points={
-         "console_scripts": [
-             "webapp=webapp.__main__:main"
-         ]
-     }
+        "console_scripts": [
+            "webapp=webapp.__main__:main"
+        ]
+    }
 )
