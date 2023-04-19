@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 app_dependencies = [
-    "bottle==0.12.18",
+    "bottle==0.12.20",
     "gunicorn==20.0.4",
     "inject==4.0.0",
     "requests>=2.0.0",
