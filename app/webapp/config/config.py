@@ -1,9 +1,10 @@
-import inject
 import logging.config
+from os.path import dirname, realpath
+
+import inject
 import yaml
 from inject import Binder
-from os.path import dirname, realpath
-from webapp.services.timeservice import TimeService
+from app.webapp.services.timeservice import TimeService
 
 
 def init() -> None:
@@ -27,3 +28,7 @@ def host() -> str:
 
 def port() -> int:
     return 8000
+
+
+def test_mode() -> bool:
+    return False

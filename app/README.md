@@ -34,4 +34,6 @@ Run package:
 /usr/bin/python3.8.5/bin/webapp
 ```
 
+Swagger schema on `http://localhost:8000/webapp/swagger/`
+
 You can check it running on `http://localhost:8000/webapp/time/`

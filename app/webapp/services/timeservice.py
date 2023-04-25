@@ -1,8 +1,9 @@
 """
-Example service
+Example of service
 """
 
 import time
+
 
 class TimeService:
 

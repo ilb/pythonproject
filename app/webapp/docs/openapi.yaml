@@ -6,7 +6,7 @@ servers:
   - url: 'http://localhost:8000/webapp'
     description: local dev server
 paths:
-  /time:
+  /time/:
     get:
       operationId: time
       summary: return current time
