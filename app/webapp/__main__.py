@@ -13,6 +13,7 @@ if __package__ == "__main__":
 
 from app.webapp.config import config
 from app.webapp.api.controllers.time import time
+from app.webapp.api.controllers.heartbeat import heartbeat
 
 webapp = Bottle()
 
@@ -20,8 +21,9 @@ webapp = Bottle()
 def main():
     try:
         config.init()
-        # mounting controller
+        # mounting controllers
         webapp.mount("/webapp/time/", time)
+        webapp.mount("/webapp/heartbeat", heartbeat)
         # disable before release!
         if config.test_mode():
             webapp.install(build_swagger_plugin())
@@ -51,9 +53,11 @@ def build_swagger_plugin():
             swagger_ui_suburl="/webapp/swagger/",
         )
 
+
 @webapp.route("/webapp/", method='GET', skip=True)
 def base_page():
     return static_file("index.html", root=(dirname(realpath(__file__)) + "/docs/"))
+
 
 if __name__ == "__main__":
     path = os.path.dirname(os.path.dirname(__file__))

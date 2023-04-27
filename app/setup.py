@@ -5,7 +5,10 @@ app_dependencies = [
     "gunicorn==20.0.4",
     "inject==4.0.0",
     "requests>=2.0.0",
-    "bottle-swagger-2==2.0.8"
+    "bottle-swagger-2==2.0.8,",
+    "ilb-pycontext==1.0.1",
+    "mysql-connector-python==8.0.33",
+    "protobuf==3.20.3",
 ]
 
 dev_dependencies = [

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+    <env-entry>
+        <env-entry-name>apps.webapp.host</env-entry-name>
+        <env-entry-type>java.lang.String</env-entry-type>
+        <env-entry-value>127.0.0.1</env-entry-value>
+    </env-entry>
+    <env-entry>
+        <env-entry-name>apps.webapp.port</env-entry-name>
+        <env-entry-type>java.lang.Integer</env-entry-type>
+        <env-entry-value>8000</env-entry-value>
+    </env-entry>
+    <env-entry>
+        <env-entry-name>apps.webapp.test_mode</env-entry-name>
+        <env-entry-type>java.lang.Boolean</env-entry-type>
+        <env-entry-value>true</env-entry-value>
+    </env-entry>
+    <env-entry>
+        <env-entry-name>apps.pythonproject.db</env-entry-name>
+        <env-entry-type>java.lang.String</env-entry-type>
+    </env-entry>
+    <env-entry>
+        <env-entry-name>apps.pythonproject.db_user</env-entry-name>
+        <env-entry-type>java.lang.String</env-entry-type>
+    </env-entry>
+    <env-entry>
+        <env-entry-name>apps.pythonproject.db_PASSWORD</env-entry-name>
+        <env-entry-type>java.lang.String</env-entry-type>
+    </env-entry>
+
+</web-app>

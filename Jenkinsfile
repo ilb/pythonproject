@@ -12,6 +12,11 @@ pipeline {
             defaultValue: false)
     }
 
+    options {
+        disableConcurrentBuilds()
+        buildDiscarder(logRotator(numToKeepStr: "3"))
+    }
+
     stages {
         stage ('Build') {
             when {
@@ -31,6 +36,15 @@ pipeline {
                 sh '/opt/bin/pyupdate-remote.sh ${APPNAME}'
                 sh '/opt/bin/pyinstall-remote.sh ${APPNAME}'
                 sh '/opt/bin/pypublish-remote.sh ${APPNAME}'
+            }
+        }
+
+        stage ('Deploy') {
+            when {
+                expression { params.RELEASE }
+            }
+            steps {
+                sh '/opt/bin/pydeploy-remote.sh ${APPNAME}'
             }
         }
     }
