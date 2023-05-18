@@ -1,13 +1,16 @@
 openapi: 3.0.0
 info:
-  title: Time API
+  title: Template API
   version: 1.0.0
 servers:
-  - url: 'http://localhost:8000/webapp'
+  - url: 'http://localhost:8001/webapp'
     description: local dev server
+  - tags: time, file
 paths:
   /time/:
     get:
+      tags:
+        - time
       operationId: time
       summary: return current time
       responses:
@@ -19,3 +22,38 @@ paths:
                 time:
                   value:
                     time: '13:28'
+  /loadFile/:
+    post:
+      tags:
+        - file
+      operationId: loadFile
+      summary: file loader
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                test_file:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: 'request successful'
+          content:
+            text/plain:
+              schema:
+                type: string
+        '450':
+          description: 'one of required files fields are empty'
+          content:
+            text/plain:
+              schema:
+                type: string
+        '550':
+          description: 'server or service error'
+          content:
+            text/plain:
+              schema:
+                type: string
+      x-codegen-request-body-name: body

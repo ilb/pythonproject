@@ -1,8 +1,8 @@
 import logging
 import os
-import sys
 from os.path import dirname, realpath
 
+import sys
 import yaml
 from bottle import Bottle, static_file
 from bottle_swagger import SwaggerPlugin
@@ -14,6 +14,7 @@ if __package__ == "__main__":
 from app.webapp.config import config
 from app.webapp.api.controllers.time import time
 from app.webapp.api.controllers.heartbeat import heartbeat
+from app.webapp.api.controllers.load_file import loader
 
 webapp = Bottle()
 
@@ -24,9 +25,15 @@ def main():
         # mounting controllers
         webapp.mount("/webapp/time/", time)
         webapp.mount("/webapp/heartbeat", heartbeat)
+        webapp.mount("/webapp/loadFile/", loader)
         # disable before release!
         if config.test_mode():
             webapp.install(build_swagger_plugin())
+
+        try:
+            os.mkdir(f"{config.file_folder()}")
+        except OSError as os_error:
+            print(os_error)
 
         sys.exit(
             webapp.run(

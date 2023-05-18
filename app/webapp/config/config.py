@@ -26,24 +26,28 @@ def build_container(binder: Binder) -> Binder:
 
 
 def host() -> str:
-    return shared_context.get("apps.pythonproject.host")
+    return shared_context.get("apps.webapp.host")
 
 
 def port() -> int:
-    return shared_context.get("apps.pythonproject.port")
+    return shared_context.get("apps.webapp.port")
 
 
 def test_mode() -> bool:
-    return shared_context.get("apps.pythonproject.test_mode")
+    return shared_context.get("apps.webapp.test_mode")
 
 
 def db() -> str:
-    return shared_context.get("apps.pythonproject.db")
+    return shared_context.get("apps.webapp.db")
 
 
 def db_password() -> str:
-    return shared_context.get("apps.pythonproject.db_PASSWORD")
+    return shared_context.get("apps.webapp.db_PASSWORD")
 
 
 def db_user() -> str:
-    return shared_context.get("apps.pythonproject.db_user")
+    return shared_context.get("apps.webapp.db_user")
+
+
+def file_folder() -> str:
+    return shared_context.get("apps.webapp.file_folder")

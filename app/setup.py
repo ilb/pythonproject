@@ -9,6 +9,7 @@ app_dependencies = [
     "ilb-pycontext==1.0.1",
     "mysql-connector-python==8.0.33",
     "protobuf==3.20.3",
+    "PyYAML==5.3",
 ]
 
 dev_dependencies = [

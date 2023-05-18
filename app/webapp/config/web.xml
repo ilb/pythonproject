@@ -10,7 +10,7 @@
     <env-entry>
         <env-entry-name>apps.webapp.port</env-entry-name>
         <env-entry-type>java.lang.Integer</env-entry-type>
-        <env-entry-value>8000</env-entry-value>
+        <env-entry-value>8001</env-entry-value>
     </env-entry>
     <env-entry>
         <env-entry-name>apps.webapp.test_mode</env-entry-name>
@@ -18,16 +18,21 @@
         <env-entry-value>true</env-entry-value>
     </env-entry>
     <env-entry>
-        <env-entry-name>apps.pythonproject.db</env-entry-name>
+        <env-entry-name>apps.webapp.db</env-entry-name>
         <env-entry-type>java.lang.String</env-entry-type>
     </env-entry>
     <env-entry>
-        <env-entry-name>apps.pythonproject.db_user</env-entry-name>
+        <env-entry-name>apps.webapp.db_user</env-entry-name>
         <env-entry-type>java.lang.String</env-entry-type>
     </env-entry>
     <env-entry>
-        <env-entry-name>apps.pythonproject.db_PASSWORD</env-entry-name>
+        <env-entry-name>apps.webapp.db_PASSWORD</env-entry-name>
         <env-entry-type>java.lang.String</env-entry-type>
     </env-entry>
-
+    <env-entry>
+        <env-entry-name>apps.webapp.file_folder</env-entry-name>
+        <env-entry-type>java.lang.String</env-entry-type>
+        <env-entry-value>/var/apps/webapp/files</env-entry-value>
+    </env-entry>
 </web-app>
+
